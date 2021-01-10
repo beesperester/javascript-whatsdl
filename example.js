@@ -23,7 +23,6 @@ if (!fs.existsSync(DOWNLOADS_PATH)) {
     fs.mkdirSync(DOWNLOADS_PATH);
 }
 
-
 // Load the session data if it has been previously saved
 let sessionData;
 if(fs.existsSync(SESSION_FILE_PATH)) {
@@ -157,21 +156,17 @@ client.on('ready', async () => {
 
                 await storeMessagesCallback(msgs)
 
-                let counter = 0;
-
                 while (true) {
                     const loadedMessages = await chat.loadEarlierMsgs();
-                    if (!loadedMessages) break;
-
-                    // if (counter > 100) break;
+                    if (!loadedMessages) break
 
                     let loadedMsgs = loadedMessages.filter(msgFilter)
                     loadedMsgs = loadedMsgs.map(m => window.WWebJS.getMessageModel(m))
                     
                     await storeMessagesCallback(loadedMsgs)
-
-                    counter++;
-                }        
+                }
+                
+                return;
             }, chat.id._serialized)
         }
     }
