@@ -1,0 +1,9 @@
+# node
+node_modules
+
+# project
+downloads
+session.json
+
+# macOS
+.DS_Store

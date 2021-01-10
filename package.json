@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.12.0"
+  },
+  "name": "javascript-whatsdl",
+  "description": "",
+  "version": "1.0.0",
+  "main": "example.js",
+  "scripts": {
+    "test": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beesperester/javascript-whatsdl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beesperester/javascript-whatsdl/issues"
+  },
+  "homepage": "https://github.com/beesperester/javascript-whatsdl#readme"
+}
