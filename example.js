@@ -4,6 +4,7 @@ const { Client, Message } = require('whatsapp-web.js');
 const { join } = require('path');
 const { exception } = require('console');
 const crypto = require('crypto');
+const slugify = require('slugify')
 
 // Path where the session data will be stored
 const SESSION_FILE_PATH = './session.json';
@@ -129,8 +130,8 @@ client.on('ready', async () => {
     let found = false
 
     for (let chat of chats) {
-        console.info(`Found chat '${chat.name}'`)
-        if (chat.name == CHATNAME) {
+        console.info(`Found chat '${slugify(chat.name)}'`)
+        if (slugify(chat.name) == CHATNAME) {
             let found = true
 
             // create directory for chat
@@ -168,6 +169,8 @@ client.on('ready', async () => {
                 
                 return;
             }, chat.id._serialized)
+
+            break;
         }
     }
 
